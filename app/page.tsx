@@ -1,3 +1,4 @@
+import { MaritimeChokepointMap } from "@/components/MaritimeChokepointMap";
 import Link from "next/link";
 import { FALLBACK_CHOKEPOINTS, FALLBACK_RATES } from "@/lib/fallback-data";
 import { Anchor, AlertTriangle, ArrowRight, ExternalLink } from "lucide-react";
@@ -34,6 +35,8 @@ export default function FreightlineBoardPage() {
       <div className="border-l-4 border-sea bg-sky-50/50 p-4 rounded-r-md text-sky-950 leading-relaxed">
         <strong>Index Discipline:</strong> An index level is not a price. The Baltic Dry Index (BDI) is a weighted composite of dry bulk charter rates normalized to a base level; a container index (WCI/FBX) is a published rate in dollars per 40ft container ($/FEU). They are never combined on the same axis.
       </div>
+
+      <MaritimeChokepointMap />
 
       {/* Chokepoint Grid */}
       <div className="space-y-4">
