@@ -1,5 +1,6 @@
 'use client';
 
+import { WorldVectorLandmass } from './WorldVectorLandmass';
 import React, { useState } from 'react';
 import { Anchor, Compass, ExternalLink, ShieldAlert, ArrowUpRight } from 'lucide-react';
 
@@ -124,7 +125,7 @@ export function MaritimeChokepointMap() {
 
   const project = (lat: number, lng: number) => {
     const x = ((lng + 180) / 360) * 100;
-    const y = ((85 - lat) / 145) * 100;
+    const y = ((84 - lat) / 142) * 100;
     return {
       x: Math.max(4, Math.min(96, x)),
       y: Math.max(6, Math.min(94, y))
@@ -157,14 +158,8 @@ export function MaritimeChokepointMap() {
       {/* SVG Canvas */}
       <div className="relative w-full h-[360px] sm:h-[420px] bg-[#EBF3FD]/40 border-b border-border overflow-hidden select-none">
         <svg className="w-full h-full" viewBox="0 0 1000 500" preserveAspectRatio="none">
-          <g fill="#F1F5F9" stroke="#CBD5E1" strokeWidth="1">
-            <path d="M120 70 L280 60 L320 120 L260 200 L180 230 L130 180 Z" />
-            <path d="M260 250 L340 270 L330 380 L280 430 L250 350 Z" />
-            <path d="M480 80 L560 70 L580 140 L500 170 L460 140 Z" />
-            <path d="M480 190 L580 190 L600 320 L530 380 L470 270 Z" />
-            <path d="M590 70 L850 80 L880 200 L760 260 L620 190 Z" />
-            <path d="M780 320 L880 320 L870 400 L770 390 Z" />
-          </g>
+          <WorldVectorLandmass />
+
         </svg>
 
         {/* Chokepoint & Port Pins */}
